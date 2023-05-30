@@ -8,4 +8,4 @@ root.render(
   <React.StrictMode>
     <Routes />
   </React.StrictMode>
-);
+)
