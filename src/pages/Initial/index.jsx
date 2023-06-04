@@ -10,7 +10,7 @@ import styles from "./Initial.module.css"
 export default function Initial() {
   return (
     <>
-      <Cabecalho/>
+   
       <Banner imagem="home"/>
       <Titulo>
         <h1>Um lugar para guardar seus vídeos e filmes!</h1>
@@ -20,7 +20,7 @@ export default function Initial() {
             return <Card {...video} key={video.id}/>
         })}
       </section>
-      <Rodape/>
+
     </>
   )
 }
