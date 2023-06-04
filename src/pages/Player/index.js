@@ -1,20 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './Player.module.css'
 import Banner from 'components/Banner'
 import Titulo from 'components/Titulo'
-import videos from 'json/db.json';
 import { useParams } from 'react-router-dom'
 
 
 export default function Player() {
+    const [video, setVideo] = useState();
     const parametros = useParams();
-    var video;
-    parametros.id === '999'? video = null :
-    video = videos.find((video) =>{
-        return video.id === Number(parametros.id)
-    })
+    
+    useEffect(() => {
+        fetch(`https://my-json-server.typicode.com/abnerugeda/cinetag-api/videos?id=${parametros.id}`)
+        .then(resposta => resposta.json())
+        .then(dados => {
+            setVideo(...dados)
+        })
+    }, [])
 
-    console.log(video)
+
     return (
         <>
         <Banner imagem="player"/>
