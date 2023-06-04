@@ -1,13 +1,13 @@
-import React from 'react'
-import styles from './Cabecalho.module.css'
-import logo from './logo.png'
-import CabecalhoLink from '../CabecalhoLink'
-import { Link } from 'react-router-dom'
-export default function Cabecalho() {
+import { Link } from "react-router-dom";
+import logo from './logo.png';
+import styles from './Cabecalho.module.css';
+import CabecalhoLink from "components/CabecalhoLink";
+
+function Cabecalho() {
     return (
         <header className={styles.cabecalho}>
             <Link to="./">
-                <img src={logo} alt="Logo do cinetag" />
+                <img src={logo} alt="Logo do cinetag"></img>
             </Link>
             <nav>
                 <CabecalhoLink url="./">
@@ -18,5 +18,7 @@ export default function Cabecalho() {
                 </CabecalhoLink>
             </nav>
         </header>
-  )
+    )
 }
+
+export default Cabecalho;
